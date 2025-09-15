@@ -1,0 +1,6 @@
+fastapi==0.110.0
+uvicorn==0.29.0
+pydantic==2.6.1
+httpx==0.27.0
+redis==3.5.3  # 兼容SSL连接的稳定版本
+python-dotenv==1.0.1
