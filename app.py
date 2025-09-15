@@ -70,14 +70,14 @@ def verify_api_key(api_key: Optional[str] = None):
 # ---------------------- 3. 处理节点配置 ----------------------
 PROCESSING_NODES = [
     {
-        "url": os.getenv("NODE_1_URL", "https://your-username-node1.hf.space"),
+        "url": os.getenv("NODE_1_URL", "https://fiewolf1000-bc_modle_space.hf.space"),
         "api_key": os.getenv("NODE_API_KEY", "node-key"),
         "health": "unknown",
         "last_check": 0,
         "load": 0
     },
     {
-        "url": os.getenv("NODE_2_URL", "https://your-username-node2.hf.space"),
+        "url": os.getenv("NODE_2_URL", "https://fiewolf1000-bc_modle_space1.hf.space"),
         "api_key": os.getenv("NODE_API_KEY", "node-key"),
         "health": "unknown",
         "last_check": 0,
@@ -267,4 +267,5 @@ async def node_health(api_key: str = Depends(verify_api_key)):
             "load": node["load"],
             "last_check": time.ctime(node["last_check"]) if node["last_check"] else "Never"
         })
+
     return {"status": "success", "nodes": status}
